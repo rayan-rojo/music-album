@@ -1,0 +1,30 @@
+Public Class Track
+    Public Property TrackNumber As Integer
+    Public Property Title As String
+    Public Property Duration As String
+
+    Public Sub New(trackNumber As Integer, title As String, duration As String)
+        Me.TrackNumber = trackNumber
+        Me.Title = title
+        Me.Duration = duration
+    End Sub
+End Class
+
+Public Class Album
+    Public Property Name As String
+    Public Property Artist As String
+    Public Property ReleaseYear As Integer
+    Public Property Tracks As List(Of Track)
+
+    Public Sub New(name As String, artist As String, releaseYear As Integer)
+        Me.Name = name
+        Me.Artist = artist
+        Me.ReleaseYear = releaseYear
+        Me.Tracks = New List(Of Track)()
+    End Sub
+
+    Public Sub AddTrack(track As Track)
+        Me.Tracks.Add(track)
+    End Sub
+End Class
+
